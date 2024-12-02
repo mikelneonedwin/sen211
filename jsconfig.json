@@ -5,7 +5,7 @@
         "allowJs": true,
         "lib": ["ES2015", "DOM"],
         "module": "ESNext",
-        "target": "ESNext"
+        "target": "ESNext",
     },
     "include": ["**/*.js"]
 }
