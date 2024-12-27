@@ -1,0 +1,9 @@
+css.txt
+node_modules
+tailwind.config.*
+vite.config.*
+jsconfig.json
+package.json
+pnpm-lock.yaml
+*.tw.css
+note.ts
