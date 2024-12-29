@@ -97,6 +97,20 @@ body {
     margin-block: 10px;
 }
 
+.book-info-small p {
+    padding-inline: 10px;
+    font-size: 18px;
+    margin-block: 10px;
+}
+
+.book-info-small span {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    padding: 2px 5px;
+    font-size: 16px;
+}
+
 .welcome-message {
     font-size: 24px;
     margin-top: 10px;
@@ -149,6 +163,16 @@ a.goto:hover {
 .section-details {
     display: grid;
     grid-template-columns: 1fr 1px 1fr;
+    gap: 20px;
+    background-color: black;
+    margin: 10px;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.section-details-small {
+    display: grid;
+    grid-template-columns: 2fr 1px 1fr;
     gap: 20px;
     background-color: black;
     margin: 10px;

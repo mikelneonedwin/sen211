@@ -15,7 +15,7 @@
         .back-button {
             position: sticky;
             top: 0;
-            background-color: #f8f9fa;
+            background-color: #000000;
             padding: 10px;
             text-align: left;
             border-bottom: 1px solid #ddd;
@@ -41,15 +41,27 @@
             border: none;
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const file = urlParams.get('file');
+            if (file) {
+                const downloadLink = document.querySelector('.back-button a:nth-child(2)');
+                const iframe = document.querySelector('.pdf-viewer');
+                downloadLink.href = `./../files/${file}`;
+                iframe.src = `./../files/${file}`;
+            }
+        });
+    </script>
 </head>
 
 <body>
     <div class="back-button">
         <a href="javascript:history.back()">← Back</a>
-        <a href="./../files/phy111.pdf" download>Download PDF</a>
+        <a href="#" download>Download PDF</a>
     </div>
     <div class="pdf-container">
-        <iframe class="pdf-viewer" src="./../files/phy111.pdf"></iframe>
+        <iframe class="pdf-viewer" src="."></iframe>
     </div>
 </body>
 
