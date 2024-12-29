@@ -214,7 +214,7 @@ a.goto:hover {
 .embed {
     transform: translateY(0px);
     opacity: 1;
-    transition: all 0.4s;
+    transition: all 0.25s;
 }
 
 
