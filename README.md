@@ -1,10 +1,13 @@
 # SEN 211 - Introduction to Software Engineering Semester’s Project
 
 ## Project Description
+
 The project is to build a personal e-learning application for year one students in the Faculty of Computing. The application must have the following sections:
 
 ### Course Modules Section
+
 The course module covers the following courses:
+
 - COS111
 - COS121
 - MTH111/121
@@ -15,17 +18,21 @@ The course module covers the following courses:
 - UNIUYO-CSC122
 
 Each course module should provide:
+
 - A quiz section with multiple-choice questions, score tracking, and a timer for the duration of the quiz.
 - A learning section with suggested learning materials for the course.
 
 ### Student Performance Evaluation and Counselling Section
+
 - Tools and features to evaluate student performance.
 - Counselling resources based on student performance.
 
 ### Additional Sections
+
 - Any other sections based on expected user requirements.
 
 ## Project Groupings
+
 - **Group 1:** COS 111 module
 - **Group 2:** COS 121 module
 - **Group 3:** MTH 111/121 module
@@ -40,8 +47,7 @@ Each course module should provide:
 Each group is expected to submit full documentation for the implementation of their project. The documentation should follow standard software engineering processes, including the software process model, system modeling, requirements, and specification.
 
 ## Submission Deadline
+
 To be submitted on/before January 6th, 2025.
 
 ---
-
-Please review the drafted README.md content for any additions or modifications. Once approved, I will proceed to finalize and commit the README.md file to the repository.
