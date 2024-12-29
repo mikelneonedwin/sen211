@@ -1,10 +1,11 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: Monteserrat;
 }
-body{
+
+body {
     color: white;
     background: black;
     font-family: "Roboto";
@@ -15,16 +16,18 @@ body{
     font-family: Monteserrat;
     src: url(./Fonts/Montserrat-Regular.ttf);
 }
+
 @font-face {
     font-family: Monteserrat-Black;
     src: url(./Fonts/Montserrat-Black.ttf);
 }
+
 @font-face {
     font-family: Monteserrat-Light;
     src: url(./Fonts/Montserrat-Light.ttf);
 }
 
-#Learn{
+#Learn {
     background-color: orange;
     color: black;
     font-family: Monteserrat-Black;
@@ -33,7 +36,8 @@ body{
 header h1 {
     font-family: Monteserrat-Black;
 }
-nav ul{
+
+nav ul {
     display: flex;
     /* border: 2px solid white; */
     justify-content: space-around;
@@ -44,29 +48,31 @@ nav ul li {
     list-style-type: none;
 }
 
-nav ul li p{
+nav ul li p {
     font-size: 1em;
     transition: 0.3s;
-    cursor: pointer;    
+    cursor: pointer;
 }
 
-nav ul p:hover{
+nav ul p:hover {
     color: orange;
 }
-header{
-    margin:  0 0 2rem 0;
+
+header {
+    margin: 0 0 2rem 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    ;
 }
 
-header .hamburger > div{
-width: 50px;
-height: 3px;
-background-color: #fff;
+header .hamburger>div {
+    width: 50px;
+    height: 3px;
+    background-color: #fff;
 }
 
-header .hamburger > div:nth-child(2) {
+header .hamburger>div:nth-child(2) {
     margin-top: .3em;
     margin-bottom: .3em;
 }
@@ -76,24 +82,38 @@ header .hamburger {
     cursor: pointer;
 }
 
-.HomeContent1{
+.HomeContent1 {
     /* border: 1px solid wheat; */
-    height: 5rem;
+    height: 15rem;
+    justify-self: space-between;
+    padding-left: 30px;
+    padding-top: 60px;
+    /* display: ; */
 }
-.Lectures-Overview{
-    margin:  2rem 0 2rem 0;
+
+.Lectures-Overview {
+    margin: 2rem 0 2rem 0;
     /* border: 1px solid white; */
-    
+    padding-top: 30px
 }
-.lectures-overview-header{
+
+.lectures-overview-header {
     /* border: 1px solid white; */
     display: flex;
     height: 4rem;
     margin: 0 0 1rem 0;
     align-items: center;
     justify-content: space-between;
+    padding-left: 30px;
 }
-.module-quiz{
+
+.lecture-text {
+    font-family: Inter;
+    font-weight: 4px;
+    font-size: 24px;
+}
+
+.module-quiz {
     width: 10rem;
     height: 3rem;
     background-color: transparent;
@@ -104,21 +124,15 @@ header .hamburger {
     border-radius: 30px;
     transition: .3s;
 }
-.quizButton:hover{
-    padding: .5em .8em;
-    background-color: orange;
-    color: black;
-    font-weight: bold;
-    cursor: pointer;
-}
 
-.templates{
+.templates {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
     /* border: 1px solid; */
 }
-.template1{
+
+.template1 {
     width: 90%;
     background: rgb(38, 31, 31);
     margin: .5rem 0 0.5rem 0;
@@ -133,19 +147,20 @@ header .hamburger {
     cursor: pointer;
 }
 
-.template1 p{
+.template1 p {
     font-family: Monteserrat-Light;
     margin: .8em 0;
 }
 
-.template1:hover{
+.template1:hover {
     transform: scale(1.05);
 }
-img{
+
+img {
     width: 20px;
-    
 }
-.readmore{
+
+.readmore {
     position: relative;
     width: 7rem;
     height: 2rem;
@@ -161,10 +176,11 @@ img{
     left: 50%;
     cursor: pointer;
 }
-.readmore:hover{
-   background-color: orange;
-   color: black;
-   font-weight: bold;
+
+.readmore:hover {
+    background-color: orange;
+    color: black;
+    font-weight: bold;
 }
 
 .readmore a {
@@ -177,54 +193,49 @@ img{
 
 
 /* mediaquery part @sisco😌 */
+
+
 /* I decided to work on the media query like you asked */
 
 @media only screen and (max-width:1300px) {
-
-    .templates{
+    .templates {
         grid-template-columns: repeat(2, 1fr);
     }
     /* .template1{
-        width: 90%;
-        padding: 14px;
-    } */
+width: 90%;
+padding: 14px;
+} */
     /* .lectures-overview-header{
-        flex-direction: column;
-        height: 7rem;
-    } */
+flex-direction: column;
+height: 7rem;
+} */
 }
 
-
 @media only screen and (max-width:768px) {
-    .templates{
+    .templates {
         grid-template-columns: repeat(1, 1fr);
     }
-
     header nav ul {
-       display: none;
+        display: none;
     }
-
     header .hamburger {
         display: block;
     }
-
-    .readmore{
+    .readmore {
         left: 50%;
     }
     /* .template1{
-        width: 15rem;
-        padding: 14px;
-    } */
+width: 15rem;
+padding: 14px;
+} */
     /* .lectures-overview-header{
-        flex-direction: column;
-        height: 7rem;
-    } */
+flex-direction: column;
+height: 7rem;
+} */
     section.question-area {
         /* display: block !important; */
         flex-direction: column;
     }
-    
-
 }
 
 .GoBack {
@@ -239,12 +250,25 @@ img{
     cursor: pointer;
 }
 
- .quizButton {
-padding: .3em .5em;
-border: 1px solid orange;
-background: none;
-color: orange;
-transition: .3s;
+.quizButton {
+    padding: .3em .5em;
+    border: 1px solid orange;
+    background: none;
+    color: orange;
+    transition: .3s;
+    width: 150px;
+    font-family: Open Sans;
+    font-weight: bold;
+    font-size: medium;
+    border-radius: 5px;
+}
+
+.quizButton:hover {
+    /* padding: .5em .8em; */
+    background-color: orange;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 section.content {
@@ -259,8 +283,7 @@ section.content h3 {
     font-family: Monteserrat;
 }
 
-
-section.content h2{
+section.content h2 {
     margin-top: .3em;
     margin-bottom: 1em;
     font-family: Monteserrat-Black;
@@ -270,13 +293,13 @@ section p {
     font-family: Monteserrat-Light;
 }
 
-section.content ol{
+section.content ol {
     margin-top: 3em;
 }
 
-section.content ol ul li{
+section.content ol ul li {
     margin-top: 1em;
-    list-style-type:lower-roman;
+    list-style-type: lower-roman;
 }
 
 .pagination {
@@ -286,36 +309,35 @@ section.content ol ul li{
 }
 
 .pagination .prev {
-width: 30%;
-text-align: right;
-padding: .2em .5em;
-border: 1px solid #fff;
-background: none;
-color: #fff;
-border-radius: 5px;
-display: flex;
-justify-content: space-between;
-align-items: center;
+    width: 30%;
+    text-align: right;
+    padding: .2em .5em;
+    border: 1px solid #fff;
+    background: none;
+    color: #fff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .pagination .next {
-width: 30%;
-text-align: left;
-padding: .2em .5em;
-border: 1px solid orange;
-background: none;
-color: orange;
-border-radius: 5px;
-display: flex;
-justify-content: space-between;
-align-items: center;
+    width: 30%;
+    text-align: left;
+    padding: .2em .5em;
+    border: 1px solid orange;
+    background: none;
+    color: orange;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-@media only screen and (min-width: 992px){
-    
-section.content {
-    max-width: 70%;
-}
+@media only screen and (min-width: 992px) {
+    section.content {
+        max-width: 70%;
+    }
 }
 
 .GoBack .time span {
@@ -349,46 +371,162 @@ section.question-area .indicator .bottom {
 }
 
 section.question-area .indicator .bottom div {
-display: flex;
-align-items: center;
-gap: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 section.question-area .indicator .bottom div div.answered {
-width: 10px;
-height: 10px;
-background-color: lime;
-border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: lime;
+    border-radius: 50%;
 }
 
 section.question-area .indicator .bottom div div.skipped {
-width: 10px;
-height: 10px;
-background-color: blue;
-border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: blue;
+    border-radius: 50%;
 }
 
 section.question-area .indicator .bottom div span {
-font-size: .8rem;
-font-family: Monteserrat-Light;
+    font-size: .8rem;
+    font-family: Monteserrat-Light;
 }
 
-section.question-area .answered-questions{
-    display:grid;
+section.question-area .answered-questions {
+    display: grid;
     grid-template-columns: repeat(5, 1fr);
     column-gap: 10px;
 }
 
-section.question-area .answered-questions div{
-width: 35px;
-height: 35px;
-/* background-color: lime; */
-border: 1px solid #777;
-margin-top: .5em;
-text-align: center;
-color: #fff;
-border-radius: 3px;
-font-size: 1.1em;
-padding-top: 0.3em;
-font-family: Monteserrat;
+section.question-area .answered-questions div {
+    width: 35px;
+    height: 35px;
+    /* background-color: lime; */
+    border: 1px solid #777;
+    margin-top: .5em;
+    text-align: center;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 1.1em;
+    padding-top: 0.3em;
+    font-family: Monteserrat;
+}
+
+.course-code {
+    font-family: Afacad;
+    font-weight: 400;
+    font-size: 48px;
+}
+
+.learn-text {
+    font-weight: 600;
+    padding-left: 30px;
+    /* padding-bottom: 50px; */
+}
+
+.go-back {
+    background-color: black;
+    color: #fff;
+    border-radius: 19px;
+    border: 2px solid white;
+    height: 35px;
+    width: 89px;
+    transition: 2s;
+}
+
+.go-back:hover {
+    padding: .5em .8em;
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* .go-back-container {
+display: flex;
+} */
+
+.pic {
+    width: 5px !important;
+}
+
+header.search-container {
+    /* padding-bottom: 30px;
+        padding-top: 400px; */
+    position: relative;
+    width: 300px;
+    height: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.search-container img {
+    position: absolute;
+    width: 30px;
+    padding-top: 7px;
+    padding-left: 15px;
+}
+
+.search-container input[type="text"] {
+    width: 100%;
+    height: 1px;
+    padding: 10px 10px 10px 40px;
+    padding-top: 15px;
+    /* Add left padding to accommodate the image */
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #242729;
+    margin-right: 170px;
+}
+
+.profile {
+    padding-right: 5px;
+    padding-left: 5px;
+    background-color: #FF2D55;
+    border-radius: 49px;
+    color: Pink;
+    width: 35px;
+}
+
+.profile-text {
+    font-family: Afacad;
+}
+
+.course-student {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.evaluation-pic {
+    width: 22px !important;
+    position: relative;
+    padding-left: 14px;
+}
+
+.student-btn {
+    height: 30px;
+    background-color: black;
+    color: #FF9500;
+    border: 1px solid #FF9500;
+    justify-content: space-between;
+    border-radius: 5px;
+    padding: .3em .5em;
+    width: 340px;
+    font-size: medium;
+    font-family: Open Sans;
+    font-weight: bold;
+}
+
+.student-btn:hover {
+    padding: .5em .8em;
+    background-color: #FF9500;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
 }
