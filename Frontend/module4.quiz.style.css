@@ -1,0 +1,67 @@
+.start.review-stage .correct-answer label {
+    color: rgb(17, 180, 17);
+}
+
+.start.review-stage .wrong-answer label {
+    color: rgb(221, 71, 71);
+}
+
+.start.review-stage .questions-container-main {
+    pointer-events: none;
+}
+
+.after-finish {
+    display: none;
+}
+
+.start.review-stage .after-finish {
+    display: grid;
+}
+
+.start.review-stage .before-finish {
+    display: none;
+}
+
+.before-finish {
+    display: grid;
+}
+
+.feedback {
+    display: none;
+}
+
+.start.review-stage .feedback {
+    display: block;
+}
+
+input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    position: relative;
+}
+
+input[type="radio"]:checked::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 14px;
+    height: 14px;
+    background-color: #ffa600;
+    border-radius: 50%;
+}
+
+div.option {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    gap: 5px;
+    justify-content: start;
+}
+
+label {
+    display: inline;
+    width: 100%;
+}
