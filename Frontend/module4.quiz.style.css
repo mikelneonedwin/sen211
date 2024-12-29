@@ -65,3 +65,46 @@ label {
     display: inline;
     width: 100%;
 }
+
+.timer-head {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 200px;
+    transform: translateX(-50%);
+    border: #ff9100 2px solid;
+    border-top: 0px;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 4px;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+    background: black;
+    font-weight: 700;
+    color: #ff9100;
+    z-index: 100;
+}
+
+.timer-head.hide {
+    display: none;
+}
+
+.timer-head.panic {
+    animation: panic 0.5s infinite;
+    border: #ff2626 2px solid;
+    color: #ff2626
+}
+
+@keyframes panic {
+    0% {
+        transform: scale(1) translateX(-50%);
+    }
+
+    50% {
+        transform: scale(1.1) translateX(-50%);
+    }
+
+    100% {
+        transform: scale(1) translateX(-50%);
+    }
+}

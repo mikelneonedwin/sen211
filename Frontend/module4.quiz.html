@@ -26,6 +26,9 @@
             const questionContainer = document.querySelector('.questions-container-main')
             const reviewScore = document.querySelector('.review-score-button')
             const doneReviewScore = document.querySelector('.done-review-score-button')
+            const timeAlloc = document.querySelector('.time-alloc')
+            const timerDisplay = document.querySelector('.timer-head')
+            var timeLeft = 0 //s
 
             if (file) {
                 fetch(`./../content/${file}`)
@@ -34,6 +37,8 @@
                         const quizData = JSON.parse(data)
                         console.log(quizData)
                         quizName.innerText = quizData.name
+                        timeAlloc.innerText = "Time Allocated: " + quizData.time + " s"
+                        timeLeft = quizData.time
                         statusMessage.innerText = ""
                         const questionsContainer = document.createElement('div');
                         questionsContainer.classList.add('questions-container');
@@ -117,6 +122,24 @@
                 console.log("Start")
                 waitSection.classList.toggle('hide', true)
                 startSection.classList.toggle('hide', false)
+                timerDisplay.classList.toggle('hide', false)
+                const i = setInterval(() => {
+                    if (timeLeft <= 0) {
+                        console.log("Time up")
+                        submitButton.click()
+                        timerDisplay.classList.toggle('panic', false)
+                        timerDisplay.classList.toggle('hide', true)
+
+                        clearInterval(i);
+                    }
+                    else {
+                        timeLeft -= 1
+                        timerDisplay.innerText = `Time left: ${timeLeft} s`
+                    }
+                    if (timeLeft < 10) {
+                        timerDisplay.classList.toggle('panic', true)
+                    }
+                }, 1000)
             }
             reviewScore.onclick = () => {
                 console.log("Review score")
@@ -135,6 +158,7 @@
 </head>
 
 <body>
+    <div class="timer-head hide">Time left: ...</div>
     <div class="main">
         <div class="header-section">
             <img src="./../res/module4.png" class="g4-logo" />
@@ -144,11 +168,12 @@
         </div>
         <p class="welcome-message">Welcome, Gideon Jones </p>
         <p><a href="./../index.html" class="goto">Home</a> /<a href="./module4.html" class="goto">Module 4</a>/Quiz</p>
-        <span class="status-message">Loading ...</span>
+        <span class="status-message">Loading quiz...</span>
         <div class="inside embed wait">
             <!-- Content will be loaded here -->
             <div class="inside-header start">
                 <h1 class="quiz-name"></h1>
+                <span class="quiz-time time-alloc"></span>
                 <a class="link-part end go start">Start</a>
             </div>
         </div>
