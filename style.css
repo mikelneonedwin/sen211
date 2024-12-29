@@ -170,6 +170,16 @@ a.goto:hover {
     border-radius: 8px;
 }
 
+.section-details-small {
+    display: grid;
+    grid-template-columns: 2fr 1px 1fr;
+    gap: 20px;
+    background-color: black;
+    margin: 10px;
+    padding: 8px;
+    border-radius: 8px;
+}
+
 .line-bw {
     background-color: #2e3133;
     margin-block: 2px;
