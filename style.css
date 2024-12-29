@@ -97,6 +97,20 @@ body {
     margin-block: 10px;
 }
 
+.book-info-small p {
+    padding-inline: 10px;
+    font-size: 18px;
+    margin-block: 10px;
+}
+
+.book-info-small span {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    padding: 2px 5px;
+    font-size: 16px;
+}
+
 .welcome-message {
     font-size: 24px;
     margin-top: 10px;
