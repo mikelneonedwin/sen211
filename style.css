@@ -211,6 +211,38 @@ a.goto:hover {
     font-size: 18px;
 }
 
+.embed {
+    transform: translateY(0px);
+    opacity: 1;
+    transition: all 0.4s;
+}
+
+
+.embed.hide {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    transform: translateY(10px);
+    transition: all 0.4s;
+}
+
+.final-score {
+    text-align: center;
+}
+
+.final-score p {
+    font-size: 24px;
+    margin-bottom: 70px;
+    margin-inline: 10px;
+    color: #cc8400;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.final-score p:hover {
+    color: #e65400;
+}
+
 @media (min-width: 992px) {
     .grid-item:hover {
         transform: scale(1.03);
