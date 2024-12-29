@@ -1,0 +1,18 @@
+{
+  "name": "PHY 111 Quiz",
+  "time": 12,
+  "questions": [
+    {
+      "question": "A 5 kg object is moving with a velocity of 2 m/s. What is its kinetic energy?",
+      "options": ["10 J", "20 J", "30 J", "40 J"],
+      "correct": "10 J",
+      "feedback": "Idk"
+    },
+    {
+      "question": "A 5 kg object is moving with a velocity of 2 m/s. What is its kinetic energy?",
+      "options": ["10 J", "20 J", "30 J", "40 J"],
+      "correct": "10 J",
+      "feedback": "Idk"
+    }
+  ]
+}
