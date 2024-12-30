@@ -168,7 +168,7 @@ export async function saveStudent(data) {
       ...data,
     });
     await updateProfile(auth, {
-      displayName: `${data.firstName} ${data.middleName} ${data.lastName}`,
+      displayName: `${data.firstName} ${data.lastName}`,
     });
   } catch (err) {
     handleError(err);
