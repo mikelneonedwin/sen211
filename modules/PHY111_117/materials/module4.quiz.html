@@ -20,6 +20,7 @@
             const startSection = document.querySelector('.inside.embed.start')
             const finishSection = document.querySelector('.inside.embed.finish')
             const quizName = document.querySelector('.quiz-name')
+            const quizName2 = document.querySelector('.quiz-name-2')
             const startButton = document.querySelector('.go.start')
             const submitButton = document.querySelector('.go.submit')
             const statusMessage = document.querySelector('.status-message')
@@ -29,7 +30,7 @@
             const timeAlloc = document.querySelector('.time-alloc')
             const timerDisplay = document.querySelector('.timer-head')
             var timeLeft = 0 //s
-
+            var i
             if (file) {
                 fetch(`./content/${file}`)
                     .then(response => response.text())
@@ -37,7 +38,10 @@
                         const quizData = JSON.parse(data)
                         console.log(quizData)
                         quizName.innerText = quizData.name
-                        timeAlloc.innerText = "Time Allocated: " + quizData.time + " s"
+                        quizName2.innerText = quizData.name
+                        const minutes = Math.floor(quizData.time / 60);
+                        const seconds = quizData.time % 60;
+                        timeAlloc.innerText = `Time Allocated: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
                         timeLeft = quizData.time
                         statusMessage.innerText = ""
                         const questionsContainer = document.createElement('div');
@@ -84,6 +88,9 @@
                             console.log("Submit")
                             startSection.classList.toggle('hide', true)
                             finishSection.classList.toggle('hide', false)
+                            timerDisplay.classList.toggle('panic', false)
+                            timerDisplay.classList.toggle('hide', true)
+                            clearInterval(i);
 
                             let score = 0;
                             const questions = document.querySelectorAll('.question');
@@ -123,18 +130,19 @@
                 waitSection.classList.toggle('hide', true)
                 startSection.classList.toggle('hide', false)
                 timerDisplay.classList.toggle('hide', false)
-                const i = setInterval(() => {
+                i = setInterval(() => {
                     if (timeLeft <= 0) {
                         console.log("Time up")
                         submitButton.click()
                         timerDisplay.classList.toggle('panic', false)
                         timerDisplay.classList.toggle('hide', true)
-
                         clearInterval(i);
                     }
                     else {
                         timeLeft -= 1
-                        timerDisplay.innerText = `Time left: ${timeLeft} s`
+                        const minutes = Math.floor(timeLeft / 60);
+                        const seconds = timeLeft % 60;
+                        timerDisplay.innerText = `Time left: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`
                     }
                     if (timeLeft < 10) {
                         timerDisplay.classList.toggle('panic', true)
@@ -167,7 +175,8 @@
             </div>
         </div>
         <p class="welcome-message">Welcome, Gideon Jones </p>
-        <p><a href="../../../index.html" class="goto">Home</a> /<a href="../index.html" class="goto">Module 4</a>/Quiz</p>
+        <p><a href="../../../index.html" class="goto">Home</a> /<a href="../index.html" class="goto">Module 4</a>/Quiz
+        </p>
         <span class="status-message">Loading quiz...</span>
         <div class="inside embed wait">
             <!-- Content will be loaded here -->
@@ -179,6 +188,7 @@
         </div>
         <div class="inside embed start hide" style="font-size: 22px;">
             <!-- Content will be loaded here -->
+            <h2 class="quiz-name-2">Hey</h2>
             <div class="questions-container-main">
 
             </div>

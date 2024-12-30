@@ -214,11 +214,13 @@ a.goto:hover {
 .embed {
     transform: translateY(0px);
     opacity: 1;
+    display: block;
     transition: all 0.25s;
 }
 
 
 .embed.hide {
+    display: none;
     opacity: 0;
     visibility: hidden;
     height: 0;
