@@ -28,6 +28,10 @@
 
 .feedback {
     display: none;
+    color: rgb(143, 143, 143);
+    font-size: 18px;
+    border: 1px solid rgb(143, 143, 143);
+    padding: 5px;
 }
 
 .start.review-stage .feedback {
@@ -73,7 +77,7 @@ label {
     width: 200px;
     transform: translateX(-50%);
     border: #ff9100 2px solid;
-    border-top: 0px;
+    border-top: none;
     font-size: 18px;
     font-family: 'Courier New', Courier, monospace;
     padding: 4px;
@@ -92,7 +96,8 @@ label {
 .timer-head.panic {
     animation: panic 0.5s infinite;
     border: #ff2626 2px solid;
-    color: #ff2626
+    color: #ff2626;
+    border-top: none;
 }
 
 @keyframes panic {
@@ -101,7 +106,7 @@ label {
     }
 
     50% {
-        transform: scale(1.1) translateX(-50%);
+        transform: scale(1.04) translateX(-47%);
     }
 
     100% {
