@@ -151,7 +151,6 @@ export async function uploadResult(result) {
  * @typedef {object} StudentData
  * @property {string} firstName
  * @property {string} lastName
- * @property {string} middleName
  * @property {string} regNo
  * @param {StudentData} data
  */
