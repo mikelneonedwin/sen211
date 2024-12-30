@@ -17,7 +17,7 @@ window.addEventListener("load", () => {
       await saveStudent({
         regNo,
         firstName: form["first-name"].value,
-        middleName: form["middle-name"].value,
+        middleName: form["last-name"].value,
       });
       location.href = "/modules/";
     } catch (err) {
