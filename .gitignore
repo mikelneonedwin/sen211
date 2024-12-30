@@ -7,3 +7,5 @@ package.json
 pnpm-lock.yaml
 *.tw.css
 note.ts
+*.idea/
+*.DS_Store
