@@ -11,7 +11,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
-    <script defer>
+    <script src="./../../../scripts/firebase.js" type="module"></script>
+    <script type="module">
+        import { uploadResult } from './../../../scripts/firebase.js';
+
         var quizState = 'wait'
         document.addEventListener("DOMContentLoaded", function () {
             const params = new URLSearchParams(window.location.search);
@@ -117,6 +120,16 @@
                             });
 
                             console.log("Final Score:", score);
+                            uploadResult({
+                                score: score,
+                                total: quizData.questions.length,
+                                course: quizData.name
+                            })
+                                .then(response => {
+                                    console.log(response); // Expected: "Data uploaded successfully"
+                                    document.querySelector('.score-show').innerText = `Your scored ${score}/${quizData.questions.length}`
+                                })
+                                .catch(error => console.error('Error fetching the file:', error));
                             document.querySelector('.score-show').innerText = `Your scored ${score}/${quizData.questions.length}`
                         }
                     })
