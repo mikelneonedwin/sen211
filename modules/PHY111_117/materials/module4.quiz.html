@@ -39,7 +39,6 @@
                     .then(response => response.text())
                     .then(data => {
                         const quizData = JSON.parse(data)
-                        console.log(quizData)
                         quizName.innerText = quizData.name
                         quizName2.innerText = quizData.name
                         const minutes = Math.floor(quizData.time / 60);
@@ -88,7 +87,6 @@
                         questionContainer.appendChild(questionsContainer);
 
                         submitButton.onclick = () => {
-                            console.log("Submit")
                             startSection.classList.toggle('hide', true)
                             finishSection.classList.toggle('hide', false)
                             timerDisplay.classList.toggle('panic', false)
@@ -99,7 +97,6 @@
                             const questions = document.querySelectorAll('.question');
                             questions.forEach((question, index) => {
                                 const selectedOption = question.querySelector('input[type="radio"]:checked');
-                                console.log(selectedOption)
                                 if (selectedOption && selectedOption.value == quizData.questions[index].correct) {
                                     score++;
                                     selectedOption.parentElement.classList.add('correct-answer');
@@ -108,7 +105,6 @@
                                 else {
                                     question.firstChild.innerText += " (❌Wrong)"
                                     const correctOption = question.querySelector(`input[value="${quizData.questions[index].correct}"]`)
-                                    console.log(correctOption)
                                     correctOption.nextElementSibling.innerText += " (✅Correct Option)"
                                     try {
                                         selectedOption.parentElement.classList.add('wrong-answer');
@@ -163,13 +159,11 @@
                 }, 1000)
             }
             reviewScore.onclick = () => {
-                console.log("Review score")
                 finishSection.classList.toggle('hide', true)
                 startSection.classList.toggle('hide', false)
                 startSection.classList.toggle('review-stage', true)
             }
             doneReviewScore.onclick = () => {
-                console.log("Done reviewing")
                 finishSection.classList.toggle('hide', false)
                 startSection.classList.toggle('hide', true)
             }
