@@ -8,6 +8,7 @@ window.addEventListener("load", () => {
 
   /** @type {HTMLFormElement} */
   const form = document["auth-form"];
+alert(typeof form);
   form.onsubmit = (e) => {
     e.preventDefault();
     const regNumberPattern = /^\d{2}\/[A-Za-z]{2}\/[A-Za-z]{2}\/\d{3,4}$/;
