@@ -3,18 +3,15 @@
 import { saveStudent } from "./firebase.js";
 
 window.addEventListener("load", () => { 
-alert("Window loaded")
   // @ts-ignore
   lucide.createIcons();
-alert("Lucide icons active")
 
   /** @type {HTMLFormElement} */
   const form = document["auth-form"];
-alert(typeof form);
   form.onsubmit = (e) => {
     e.preventDefault();
     const regNumberPattern = /^\d{2}\/[A-Za-z]{2}\/[A-Za-z]{2}\/\d{3,4}$/;
-    const regNo = form["reg"].value;
+    const regNo = form["reg"].value.trim();
     if (!regNumberPattern.test(regNo)) {
       return toast("Invalid registration number");
     }
