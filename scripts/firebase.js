@@ -121,9 +121,11 @@ export async function googleAuth() {
 
 /**
  * @typedef {object} Result
- * @property {number} questionsAttempted - Total number of questions the user attempted.
- * @property {number} correctAnswers - Number of questions answered correctly by the user.
+ * @property {number} total - Total number of questions the user attempted.
+ * @property {number} score - Number of questions answered correctly by the user.
  * @property {string} course - Name of the course or subject for which the result pertains.
+ * @property {string} time - Timestamp of when the result was uploaded.
+ * @property {string} uid - The user's unique identifier.
  */
 
 /**

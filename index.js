@@ -1,6 +1,8 @@
-import { googleSignUp } from "./lib/firebase.js"; // Ensure the correct path and file extension
-
-document.getElementById("googleSignUpButton").addEventListener("click", () => {
-  console.log("hey");
-  googleSignUp().catch((error) => console.error(error));
-});
+function checkLogin(targetRoute) {
+  const userId = localStorage.getItem("user-id");
+  if (!userId) {
+    window.location.href = "./auth/login.html";
+  } else {
+    window.location.href = targetRoute;
+  }
+}
