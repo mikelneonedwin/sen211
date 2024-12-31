@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Monteserrat;
+    font-family: Monteserrat !important;
 }
 
 body {
@@ -13,17 +13,17 @@ body {
 
 @font-face {
     font-family: Monteserrat;
-    src: url(./Fonts/Montserrat-Regular.ttf);
+    src: url(./../Fonts/Montserrat-Regular.ttf);
 }
 
 @font-face {
     font-family: Monteserrat-Black;
-    src: url(./Fonts/Montserrat-Black.ttf);
+    src: url(./../Fonts/Montserrat-Black.ttf);
 }
 
 @font-face {
     font-family: Monteserrat-Light;
-    src: url(./Fonts/Montserrat-Light.ttf);
+    src: url(./../Fonts/Montserrat-Light.ttf);
 }
 
 #Learn {
@@ -550,6 +550,20 @@ footer {
     max-width: fit-content;
     display: grid;
     gap: 18px
+}
+
+.link-part.end.go.start.hide {
+    visibility: hidden;
+    display: none;
+}
+
+.loading-gif.hide {
+    visibility: hidden;
+    display: none;
+}
+
+.question {
+    margin-block: 30px;
 }
 
 @media screen and (max-width:790px) {
