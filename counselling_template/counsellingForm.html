@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Form</title>
+  <link rel="stylesheet" href="counsellingForm.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="go-back">&lt; Go back</div>
+      <div class="logo">Learn<span class="highlight">ify.</span></div>
+      <input type="text" class="search-bar" placeholder="What do you want to study today?">
+      <div class="date-section">
+        <span class="date">19 Jan 2025</span>
+        <span class="profile-icon">IB</span>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="content">
+      <div class="title">
+        <h1>BOOKING:</h1>
+        <p>Book a Counselling session with Prof.Confidence</p>
+      </div>
+
+      <form class="booking-form">
+        <h2>Booking Form:</h2>
+        <div class="form-group">
+          <input type="text" placeholder="First Name" required>
+          <input type="text" placeholder="Last Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Email Address" required>
+        </div>
+        <div class="form-group">
+          <input type="tel" placeholder="Phone Number" required>
+        </div>
+        <div class="form-group">
+          <textarea placeholder="In Less than 200 Words Describe The Academic Challenges you Currently Face" maxlength="200" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Book a Session</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

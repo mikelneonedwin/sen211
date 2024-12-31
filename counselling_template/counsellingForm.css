@@ -1,0 +1,136 @@
+/* styles.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000000; /* Black background */
+  color: #ffffff; /* White text */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #000000;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #333333;
+}
+
+.go-back {
+  color: #888888;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.logo .highlight {
+  color: #ffaa00;
+}
+
+.search-bar {
+  width: 40%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #222222;
+  color: #ffffff;
+}
+
+.search-bar::placeholder {
+  color: #888888;
+}
+
+.date-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: #888888;
+}
+
+.profile-icon {
+  background-color: #ffaa00;
+  color: #000000;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.title h1 {
+  color: #ffaa00;
+  margin-top: 20px;
+}
+
+.title p {
+  color: #cccccc;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.booking-form h2 {
+  color: #ffaa00;
+  margin-bottom: 10px;
+}
+
+.booking-form {
+  margin-top: 20px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #333333;
+  border-radius: 5px;
+  background-color: #222222;
+  color: #ffffff;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+.submit-btn {
+  background-color: #ffaa00;
+  color: #000000;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.submit-btn:hover {
+  background-color: #ffcc33;
+}

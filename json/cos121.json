@@ -1,0 +1,202 @@
+[
+    {
+        "question": "What is the primary goal of algorithm design in programming?",
+        "options": [
+            "To write efficient code",
+            "To solve complex problems",
+            "To design a user interface",
+            "To optimize memory usage"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "What is a flowchart used for in programming?",
+        "options": [
+            "To write code",
+            "To design algorithms",
+            "To debug programs",
+            "To test software"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "What is the purpose of keywords in programming?",
+        "options": [
+            "To declare variables",
+            "To define functions",
+            "To control program flow",
+            "To identify reserved words"
+        ],
+        "correct": 3
+    },
+    {
+        "question": "What is the difference between assignment and equality operators?",
+        "options": [
+            "Assignment assigns a value, while equality checks for equality",
+            "Assignment checks for equality, while equality assigns a value",
+            "Assignment and equality are the same",
+            "Assignment is used for arithmetic operations"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "What type of control structure is used to execute a block of code repeatedly?",
+        "options": [
+            "Conditional statement",
+            "Loop",
+            "Function",
+            "Array"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "What is the purpose of an array in programming?",
+        "options": [
+            "To store a single value",
+            "To store a collection of values",
+            "To perform arithmetic operations",
+            "To control program flow"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "What is a function in programming?",
+        "options": [
+            "A block of code that performs a specific task",
+            "A variable that stores a value",
+            "A control structure that executes code repeatedly",
+            "A data structure that stores a collection of values"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "What is the benefit of using functions in programming?",
+        "options": [
+            "To reduce code readability",
+            "To increase code complexity",
+            "To promote code reusability",
+            "To decrease code efficiency"
+        ],
+        "correct": 2
+    },
+    {
+        "question": "What is the difference between a local variable and a global variable?",
+        "options": [
+            "Local variables are accessible globally, while global variables are accessible locally",
+            "Local variables are accessible only within a function, while global variables are accessible throughout the program",
+            "Local variables are used for arithmetic operations, while global variables are used for storing strings",
+            "Local variables are used for storing arrays, while global variables are used for storing single values"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "What is the purpose of comments in programming?",
+        "options": [
+            "To execute code",
+            "To declare variables",
+            "To explain code functionality",
+            "To control program flow"
+        ],
+        "correct": 2
+    },
+    {
+        "question": "What is the primary goal of computer programming?",
+        "options": [
+            "To design computer hardware",
+            "To develop algorithms and write code",
+            "To create computer networks",
+            "To manage databases"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "What is the purpose of the break statement in a loop?",
+        "options": [
+            "To exit the loop prematurely",
+            "To skip to the next iteration of the loop",
+            "To continue executing the loop",
+            "To restart the loop from the beginning"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "What is the difference between an if-else statement and a switch statement?",
+        "options": [
+            "An if-else statement is used for conditional statements, while a switch statement is used for unconditional statements",
+            "An if-else statement is used for multiple conditions, while a switch statement is used for a single condition",
+            "An if-else statement is used for a single condition, while a switch statement is used for multiple conditions",
+            "An if-else statement is used for functions, while a switch statement is used for variables"
+        ],
+        "correct": 2
+    },
+    {
+        "question": "What are keywords in programming?",
+        "options": [
+            "Variables used in a program",
+            "Reserved words with special meanings",
+            "Functions used in a program",
+            "Data types used in a program"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "What is the purpose of variables in programming?",
+        "options": [
+            "To store constant values",
+            "To store changing values",
+            "To perform arithmetic operations",
+            "To control program flow"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "What is the purpose of the return statement in a function?",
+        "options": [
+            "To exit the function prematurely",
+            "To return a value from the function",
+            "To continue executing the function",
+            "To restart the function"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "What is a control structure in programming?",
+        "options": [
+            "A statement that declares a variable",
+            "A statement that assigns a value to a variable",
+            "A statement that controls program flow",
+            "A statement that performs arithmetic operations"
+        ],
+        "correct": 2
+    },
+    {
+        "question": "A statement that performs arithmetic operations",
+        "options": [
+            "A collection of variables of the same data type",
+            "A single variable that stores multiple values",
+            "A data structure that stores key-value pairs",
+            "A programming language"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "What is a function in programming?",
+        "options": [
+            "A block of code that performs a specific task",
+            "A variable that stores a value",
+            "A control structure that controls program flow",
+            "A data structure that stores multiple values"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "What is the difference between a for loop and a while loop?",
+        "options": [
+            "A for loop is used for arrays, while a while loop is used for linked lists",
+            "A for loop is used for known iterations, while a while loop is used for unknown iterations",
+            "A for loop is used for conditional statements, while a while loop is used for unconditional statements",
+            "A for loop is used for functions, while a while loop is used for variables"
+        ],
+        "correct": 1
+    }
+]
