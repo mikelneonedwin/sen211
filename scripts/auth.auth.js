@@ -1,6 +1,9 @@
+// @ts-check
+
 import { saveStudent } from "./firebase";
 
 window.addEventListener("load", () => {
+  // @ts-ignore
   lucide.createIcons();
 
   /** @type {HTMLFormElement} */
@@ -19,7 +22,7 @@ window.addEventListener("load", () => {
         firstName: form["first-name"].value,
         lastName: form["last-name"].value,
       });
-      location.href = "/modules/";
+      location.href = "/";
     } catch (err) {
       toast(err instanceof Error ? err.message : "An unknown error occured");
       enableFields();
@@ -29,18 +32,27 @@ window.addEventListener("load", () => {
 
 function disableFields() {
   document.querySelectorAll("fieldset, button").forEach((element) => {
-    element.disabled = true;
+    if (
+      element instanceof HTMLFieldSetElement ||
+      element instanceof HTMLButtonElement
+    )
+      element.disabled = true;
   });
 }
 
 function enableFields() {
   document.querySelectorAll("fieldset, button").forEach((element) => {
-    element.disabled = false;
+    if (
+      element instanceof HTMLFieldSetElement ||
+      element instanceof HTMLButtonElement
+    )
+      element.disabled = false;
   });
 }
 
-/** @type {string} */
+/** @param {string} msg */
 function toast(msg) {
+  // @ts-ignore
   return vanillaToast.show(msg, {
     duration: 2500,
     fadeDuration: 500,
