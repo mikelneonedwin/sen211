@@ -2,9 +2,10 @@
 
 import { saveStudent } from "./firebase";
 
-window.addEventListener("load", () => {
+window.addEventListener("load", () => {mi alert("Window loaded")
   // @ts-ignore
   lucide.createIcons();
+alert("Lucide icons active")
 
   /** @type {HTMLFormElement} */
   const form = document["auth-form"];
