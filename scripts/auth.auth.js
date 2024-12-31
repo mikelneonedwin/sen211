@@ -2,7 +2,8 @@
 
 import { saveStudent } from "./firebase.js";
 
-window.addEventListener("load", () => {mi alert("Window loaded")
+window.addEventListener("load", () => { 
+alert("Window loaded")
   // @ts-ignore
   lucide.createIcons();
 alert("Lucide icons active")
