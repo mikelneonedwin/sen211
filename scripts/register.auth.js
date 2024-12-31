@@ -9,7 +9,7 @@ window.addEventListener("load", () => {
     disableFields();
     try {
       await googleAuth();
-      location.href = "../auth/auth.html";
+      location.href = "/auth/auth.html";
     } catch (err) {
       toast(err instanceof Error ? err.message : "An unknown error occured!");
       enableFields();
@@ -28,7 +28,7 @@ window.addEventListener("load", () => {
     disableFields();
     try {
       await signUp(registerForm.email.value, registerForm.password.value);
-      location.href = "../auth/auth.html";
+      location.href = "/auth/auth.html";
     } catch (err) {
       enableFields();
       toast(err instanceof Error ? err.message : "An unknown error occured!");
