@@ -1,6 +1,6 @@
 // @ts-check
 
-import { saveStudent } from "./firebase";
+import { saveStudent } from "./firebase.js";
 
 window.addEventListener("load", () => {mi alert("Window loaded")
   // @ts-ignore
