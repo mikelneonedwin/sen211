@@ -8,25 +8,24 @@ window.addEventListener("load", () => {
 
   /** @type {HTMLFormElement} */
   const form = document["auth-form"];
-  form.onsubmit = async (e) => {
+  form.onsubmit = (e) => {
     e.preventDefault();
     const regNumberPattern = /^\d{2}\/[A-Za-z]{2}\/[A-Za-z]{2}\/\d{3,4}$/;
     const regNo = form["reg"].value;
     if (!regNumberPattern.test(regNo)) {
       return toast("Invalid registration number");
     }
-    try {
       disableFields();
-      await saveStudent({
+      saveStudent({
         regNo,
         firstName: form["first-name"].value,
         lastName: form["last-name"].value,
-      });
-      location.href = "/";
-    } catch (err) {
+      }).then(() => 
+      location.href = "/")
+.catch((err) => {
       toast(err instanceof Error ? err.message : "An unknown error occured");
       enableFields();
-    }
+    })
   };
 });
 
