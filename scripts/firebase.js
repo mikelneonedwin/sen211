@@ -1,3 +1,5 @@
+// @ts-check
+
 // @ts-ignore
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
 // @ts-ignore
@@ -10,6 +12,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   updateProfile,
+  // @ts-ignore
 } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 // @ts-ignore
 import {
@@ -22,6 +25,7 @@ import {
   serverTimestamp,
   setDoc,
   where,
+  // @ts-ignore
 } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
 /**
@@ -64,11 +68,6 @@ const app = initializeApp(firebaseConfig);
 getAnalytics(app);
 export const auth = getAuth(app);
 const db = getFirestore(app);
-
-// Listen for authentication state changes
-onAuthStateChanged(auth, (user) => {
-  if (user) localStorage.setItem("user-id", user.uid);
-});
 
 /**
  * Create a new account for the user, using their email and password.
@@ -120,28 +119,28 @@ export async function googleAuth() {
 }
 
 /**
- * @typedef {object} Result
+ * @typedef {object} Record
  * @property {number} total - Total number of questions the user attempted.
  * @property {number} score - Number of questions answered correctly by the user.
  * @property {string} course - Name of the course or subject for which the result pertains.
- * @property {string} time - Timestamp of when the result was uploaded.
- * @property {string} uid - The user's unique identifier.
+ * @property {string} duration - The amount of time it took the user to complete the quiz e.g. 10 Mins
  */
 
 /**
  * Save the user's quiz or test results to the database.
  *
- * @param {Result} result - An object containing the user's test results.
+ * @param {Record} result - An object containing the user's test results.
  * @returns {Promise<void>} Resolves when the result is successfully uploaded to Firestore.
  * @throws {Error} If the upload process fails.
  */
 export async function uploadResult(result) {
   const ref = collection(db, "results");
+  const user = await getUser();
   try {
     await addDoc(ref, {
       ...result,
       time: serverTimestamp(),
-      uid: localStorage.getItem("user-id"),
+      uid: user.uid,
     });
   } catch (error) {
     handleError(error);
@@ -158,12 +157,7 @@ export async function uploadResult(result) {
  */
 export async function saveStudent(data) {
   try {
-    const user = await new Promise((res, rej) => {
-      onAuthStateChanged(auth, (user) => {
-        if (user) res(user);
-        else rej(new Error("Unable to fetch user!"));
-      });
-    });
+    const user = await getUser();
     const ref = doc(db, "users", user.uid);
     await setDoc(ref, {
       ...data,
@@ -179,17 +173,34 @@ export async function saveStudent(data) {
 /**
  * Fetch a list of the current user's results from the database.
  *
- * @returns {Promise<Result[]>} A promise that resolves to an array of the user's results.
+ * @returns {Promise<Record[]>} A promise that resolves to an array of the user's results.
  * @throws {Error} If fetching results from Firestore fails.
  */
 export async function getUserResults() {
   try {
-    const id = localStorage.getItem("user-id");
+    const user = await getUser();
     const ref = collection(db, "results");
-    const q = query(ref, where("uid", "==", id));
+    const q = query(ref, where("uid", "==", user.uid));
     const snapshot = await getDocs(q);
     return snapshot.docs.map((doc) => doc.data());
   } catch (error) {
     handleError(error);
   }
+}
+
+/**
+ * @typedef {object} User
+ * @property {string} displayName
+ * @property {string} photoURL
+ * @property {string} uid
+ * @property {string} email
+ * @returns {Promise<User>}
+ */
+export function getUser() {
+  return new Promise((res, rej) => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) res(user);
+      else rej("Unable to fetch user!");
+    });
+  });
 }
