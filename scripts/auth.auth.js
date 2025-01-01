@@ -2,7 +2,7 @@
 
 import { saveStudent } from "./firebase.js";
 
-window.addEventListener("load", () => { 
+window.addEventListener("load", () => {
   // @ts-ignore
   lucide.createIcons();
 
@@ -15,17 +15,17 @@ window.addEventListener("load", () => {
     if (!regNumberPattern.test(regNo)) {
       return toast("Invalid registration number");
     }
-      disableFields();
-      saveStudent({
-        regNo,
-        firstName: form["first-name"].value,
-        lastName: form["last-name"].value,
-      }).then(() => 
-      location.href = "/")
-.catch((err) => {
-      toast(err instanceof Error ? err.message : "An unknown error occured");
-      enableFields();
+    disableFields();
+    saveStudent({
+      regNo,
+      firstName: form["first-name"].value,
+      lastName: form["last-name"].value,
     })
+      .then(() => (location.href = "/"))
+      .catch((err) => {
+        toast(err instanceof Error ? err.message : "An unknown error occured");
+        enableFields();
+      });
   };
 });
 

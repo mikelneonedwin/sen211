@@ -158,17 +158,17 @@ export async function uploadResult(result) {
  */
 export async function saveStudent(data) {
   try {
-    const userId = await new Promise((res, rej) => {
+    const user = await new Promise((res, rej) => {
       onAuthStateChanged(auth, (user) => {
-        if (user) res(user.uid);
-        else rej(user);
+        if (user) res(user);
+        else rej(new Error("Unable to fetch user!"));
       });
     });
-    const ref = doc(db, "users", userId);
+    const ref = doc(db, "users", user.uid);
     await setDoc(ref, {
       ...data,
     });
-    await updateProfile(auth, {
+    await updateProfile(user, {
       displayName: `${data.firstName} ${data.lastName}`,
     });
   } catch (err) {
