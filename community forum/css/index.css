@@ -1,0 +1,83 @@
+body{
+    background: black;
+    font-family: "Afacad", serif !important;
+    padding-bottom: 50px;
+}
+.textInput1{
+    padding: 10px 15px 10px 38px;
+    width: 500px;
+    border-radius: 50px;
+    background-color: #242728;
+    border: none;
+    color: white;
+
+}
+.textInput{
+    padding: 10px 15px 10px 15px;
+    width: 90%;
+    border-radius: 50px;
+    background-color: #242728;
+    border: none;
+    color: white;
+}
+.headContainer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.emailRound{
+    background-color: #80162a;
+    color: #e7294d;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    font-size: 1.6rem;
+}
+@media(max-width:800px){
+    .show1{
+        display: none;
+    }
+}
+@media(min-width:800px){
+    .show2{
+        display: none;
+    }
+}
+@media(max-width:800px){
+    .buttonspace{
+        margin-top: 35px;
+    }
+}
+@media(min-width:800px){
+    .buttonspace{
+        margin-top: 90px;
+    }
+}
+.buttonspace{
+    display: flex;
+    justify-content: space-between;
+}
+.Community{
+    font-size: 1.7rem;
+}
+.share{
+    font-size: 1.2rem;
+}
+.Confidence{
+    font-size: 1.45rem;
+}
+.academic{
+    font-size: 1.4rem;
+}
+ 
+.box{
+    background-color: #242728;
+    border: 0.4px solid rgb(131, 130, 130);
+}
+.logo{
+    position: relative;
+    right: 30px;
+}
