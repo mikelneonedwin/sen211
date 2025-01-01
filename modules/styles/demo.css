@@ -525,3 +525,13 @@ display: flex;
         .main-content {
             padding-left: 30px;
         }
+        
+        .quiztime {
+            color: #FF9500;
+            ;
+        }
+        
+        .quiztime-section {
+            display: flex;
+            justify-content: space-between;
+        }
