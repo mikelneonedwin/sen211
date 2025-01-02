@@ -19,6 +19,7 @@ import {
   addDoc,
   collection,
   doc,
+  getDoc,
   getDocs,
   getFirestore,
   query,
@@ -165,9 +166,17 @@ export async function saveStudent(data) {
     await updateProfile(user, {
       displayName: `${data.firstName} ${data.lastName}`,
     });
+    localStorage.setItem("user-id", user.uid);
   } catch (err) {
     handleError(err);
   }
+}
+
+export async function studentDataIsSaved() {
+  const user = await getUser();
+  const ref = doc(db, "users", user.uid);
+  const snapshot = getDoc(ref);
+  return snapshot.exists();
 }
 
 /**

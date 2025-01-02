@@ -1,24 +1,26 @@
+// @ts-check
+
 import { googleAuth, signUp } from "./firebase.js";
+import { disableFields, handleError, toast } from "./utils.auth.js";
 
 window.addEventListener("load", () => {
+  // @ts-ignore
   lucide.createIcons();
 
-  /** @type {HTMLButtonElement} */
   const googleBtn = document.querySelector("#google-auth");
+  // @ts-ignore
   googleBtn.onclick = async () => {
     disableFields();
-    try {
-      await googleAuth();
-      location.href = "/auth/auth.html";
-    } catch (err) {
-      toast(err instanceof Error ? err.message : "An unknown error occured!");
-      enableFields();
-    }
+    googleAuth()
+      .then(() => {
+        location.href = "/auth/auth.html";
+      })
+      .catch(handleError);
   };
 
   /** @type {HTMLFormElement} */
   const registerForm = document["register-form"];
-  registerForm.onsubmit = async (e) => {
+  registerForm.onsubmit = (e) => {
     e.preventDefault();
     if (
       registerForm.password.value !== registerForm["confirm-password"].value
@@ -26,17 +28,16 @@ window.addEventListener("load", () => {
       return toast("Passwords don't match");
     }
     disableFields();
-    try {
-      await signUp(registerForm.email.value, registerForm.password.value);
-      location.href = "/auth/auth.html";
-    } catch (err) {
-      enableFields();
-      toast(err instanceof Error ? err.message : "An unknown error occured!");
-    }
+    signUp(registerForm.email.value, registerForm.password.value)
+      .then(() => {
+        location.href = "/auth/auth.html";
+      })
+      .catch(handleError);
   };
 
   // reveal password
   document.querySelectorAll("[data-lucide=eye]").forEach((element) => {
+    // @ts-ignore
     element.onclick = (e) => {
       e.currentTarget.parentElement.querySelector("input").type = "text";
       e.currentTarget.classList.add("!hidden");
@@ -46,6 +47,7 @@ window.addEventListener("load", () => {
 
   // hide password
   document.querySelectorAll("[data-lucide=eye-off]").forEach((element) => {
+    // @ts-ignore
     element.onclick = (e) => {
       e.currentTarget.parentElement.querySelector("input").type = "password";
       e.currentTarget.classList.add("!hidden");
@@ -53,24 +55,3 @@ window.addEventListener("load", () => {
     };
   });
 });
-
-function disableFields() {
-  document.querySelectorAll("fieldset, button").forEach((element) => {
-    element.disabled = true;
-  });
-}
-
-function enableFields() {
-  document.querySelectorAll("fieldset, button").forEach((element) => {
-    element.disabled = false;
-  });
-}
-
-/** @type {string} */
-function toast(msg) {
-  return vanillaToast.show(msg, {
-    duration: 2500,
-    fadeDuration: 500,
-    className: "auth",
-  });
-}
