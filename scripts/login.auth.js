@@ -1,67 +1,47 @@
-import { googleAuth, login } from "./firebase.js";
+// @ts-check
+
+import { googleAuth, login, studentDataIsSaved } from "./firebase.js";
+import { disableFields, handleError } from "./utils.auth.js";
+
+async function proceedWithLogin() {
+  const dataIsSaved = await studentDataIsSaved();
+  location.href = dataIsSaved ? "/" : "/auth/auth.html";
+}
 
 window.addEventListener("load", () => {
+  // @ts-ignore
   lucide.createIcons();
 
-  /** @type {HTMLButtonElement} */
   const googleBtn = document.querySelector("#google-auth");
-  googleBtn.onclick = async () => {
+  // @ts-ignore
+  googleBtn.onclick = () => {
     disableFields();
-    try {
-      await googleAuth();
-      location.href = "/auth/auth.html";
-    } catch (err) {
-      toast(err instanceof Error ? err.message : "An unknown error occured!");
-      enableFields();
-    }
+    googleAuth().then(proceedWithLogin).catch(handleError);
   };
 
-  /** @type {HTMLFormElement} */
   const loginForm = document["login-form"];
-  loginForm.onsubmit = async (e) => {
+  /** @param {Event} e */
+  loginForm.onsubmit = (e) => {
     e.preventDefault();
     disableFields();
-    try {
-      await login(loginForm.email.value, loginForm.password.value);
-      location.href = "/auth/auth.html";
-    } catch (err) {
-      enableFields();
-      toast(err instanceof Error ? err.message : "An unknown error occured!");
-    }
+    login(loginForm.email.value, loginForm.password.value)
+      .then(proceedWithLogin)
+      .catch(handleError);
   };
 
   // reveal password
+  // @ts-ignore
   document.querySelector("[data-lucide=eye]").onclick = (e) => {
     loginForm.password.type = "text";
     e.currentTarget.classList.add("!hidden");
     e.currentTarget.nextElementSibling.classList.remove("!hidden");
   };
-
+  
   // hide password
+  // @ts-ignore
   document.querySelector("[data-lucide=eye-off]").onclick = (e) => {
     loginForm.password.type = "password";
     e.currentTarget.classList.add("!hidden");
     e.currentTarget.previousElementSibling.classList.remove("!hidden");
   };
 });
-
-function disableFields() {
-  document.querySelectorAll("fieldset, button").forEach((element) => {
-    element.disabled = true;
-  });
-}
-
-function enableFields() {
-  document.querySelectorAll("fieldset, button").forEach((element) => {
-    element.disabled = false;
-  });
-}
-
-/** @type {string} */
-function toast(msg) {
-  return vanillaToast.show(msg, {
-    duration: 2500,
-    fadeDuration: 500,
-    className: "auth",
-  });
-}
